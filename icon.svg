@@ -1,1 +1,17 @@
-<svg>
+<svg width="300" height="200">
+
+
+
+    <rect width="200" height="200" x="50" y="0" fill="blue" />
+    <text font-size="72" font-weight="bold" x="85" y="125" fill="#d6701d">
+        SJM
+    </text>
+
+    <!-- <circle r="100" cx="150" cy="100" fill="red" />
+
+    <polygon fill="pink" points="150,0 250,200 50,200" /> -->
+    <!-- <text font-size="60" font-weight="bold" x="93" y="150" fill="#8585c4">
+        SJM
+    </text> -->
+
+</svg>

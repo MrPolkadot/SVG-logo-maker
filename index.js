@@ -11,18 +11,31 @@ const questions = [
     {
         type: "input",
         message: "Enter a color keyword for the text-color( OR a hexadecimal number)",
-        name: "text-color",
+        name: "textColor",
     },
     {
         type: "list",
         message: "Choose a shape for your logo",
         name: "shape",
-        choices: ["circle", "triangle", "square"],
+        choices: [ //THIS SHOWS AS UNDEFINED!
+            {
+                shapeName: "circle",
+                element: "circle",
+            },
+            {
+                shapeName: "triangle",
+                element: "polygon",
+            },
+            {
+                shapeName: "square",
+                element: "rect",
+            }
+        ],
     },
     {
         type: "input",
         message: "Enter a color keyword for the shape's color(OR a hexadecimal number)",
-        name: "shape-color",
+        name: "shapeColor",
     }
 ];
 
@@ -37,7 +50,7 @@ function writeToFile(fileName, data) {
 
 function init() {
     inquirer.prompt(questions).then((response) => {
-        writeToFile("./examples/logo.svg", );//use the class methods here!
+        writeToFile("./examples/logo.svg", shapes.generateShape(response.element));//use the class methods here!
     });
 }
 
