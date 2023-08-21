@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const shapes = require("./lib/shapes");
+const { Shape, Circle, Triangle, Square } = require("./lib/shapes");
 
 const questions = [
     {
@@ -17,20 +17,8 @@ const questions = [
         type: "list",
         message: "Choose a shape for your logo",
         name: "shape",
-        choices: [ //THIS SHOWS AS UNDEFINED!
-            {
-                shapeName: "circle",
-                element: "circle",
-            },
-            {
-                shapeName: "triangle",
-                element: "polygon",
-            },
-            {
-                shapeName: "square",
-                element: "rect",
-            }
-        ],
+        choices: ["circle", "triangle", "square"],
+
     },
     {
         type: "input",
@@ -50,7 +38,29 @@ function writeToFile(fileName, data) {
 
 function init() {
     inquirer.prompt(questions).then((response) => {
-        writeToFile("./examples/logo.svg", shapes.generateShape(response.element));//use the class methods here!
+        const { chars, textColor, shape, shapeColor } = response;
+        if (shape === "circle") {
+            const circle = new Circle(chars, textColor, shapeColor);
+            circle.render();
+            circle.setColor(shapeColor);
+            writeToFile("./examples/logo.svg", circle.render());
+        }
+        if (shape === "triangle") {
+            const triangle = new Triangle(chars, textColor, shapeColor);
+            triangle.render();
+            triangle.setColor(shapeColor);
+            writeToFile("./examples/logo.svg", triangle.render());
+        }
+        if (shape === "square") {
+            const square = new Square(chars, textColor, shapeColor);
+            square.render();
+            square.setColor(shapeColor);
+            writeToFile("./examples/logo.svg", square.render());
+        }
+
+
+
+        //writeToFile("./examples/logo.svg", circle.render());//use the class methods here!
     });
 }
 
