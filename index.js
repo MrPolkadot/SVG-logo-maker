@@ -1,7 +1,10 @@
+//Import libraries and modules into this module
 const inquirer = require("inquirer");
 const fs = require("fs");
 const { Shape, Circle, Triangle, Square } = require("./lib/shapes");
 
+
+//Set of questions for the terminal prompts
 const questions = [
     {
         type: "input",
@@ -27,6 +30,8 @@ const questions = [
     }
 ];
 
+
+//function to create a file using the fs npm package
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (error) => {
         if (error) {
@@ -36,6 +41,8 @@ function writeToFile(fileName, data) {
     });
 }
 
+
+//Initializer function to create the svg logo
 function init() {
     inquirer.prompt(questions).then((response) => {
         const { chars, textColor, shape, shapeColor } = response;
@@ -43,7 +50,9 @@ function init() {
             const circle = new Circle(chars, textColor, shapeColor);
             circle.render();
             circle.setColor(shapeColor);
-            writeToFile("./examples/logo.svg", circle.render());
+            circle.setText();
+            circle.createShape()
+            writeToFile("./examples/logo.svg", circle.createShape());
         }
         if (shape === "triangle") {
             const triangle = new Triangle(chars, textColor, shapeColor);
