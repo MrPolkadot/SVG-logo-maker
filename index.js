@@ -45,8 +45,8 @@ function writeToFile(fileName, data) {
 //Initializer function to create the svg logo
 function init() {
     inquirer.prompt(questions).then((response) => {
-        const { chars, textColor, shape, shapeColor } = response;
-        if (shape === "circle") {
+        const { chars, textColor, shape, shapeColor } = response; //Defines each answer into these key names.
+        if (shape === "circle") { //Checks to see which shape we choose in our prompt in order to return the logo
             const circle = new Circle(chars, textColor, shapeColor);
             circle.render();
             circle.setColor(shapeColor);
@@ -58,19 +58,21 @@ function init() {
             const triangle = new Triangle(chars, textColor, shapeColor);
             triangle.render();
             triangle.setColor(shapeColor);
-            writeToFile("./examples/logo.svg", triangle.render());
+            triangle.setText();
+            triangle.createShape();
+            writeToFile("./examples/logo.svg", triangle.createShape());
         }
         if (shape === "square") {
             const square = new Square(chars, textColor, shapeColor);
             square.render();
             square.setColor(shapeColor);
-            writeToFile("./examples/logo.svg", square.render());
+            square.setText();
+            square.createShape();
+            writeToFile("./examples/logo.svg", square.createShape());
         }
-
-
-
-        //writeToFile("./examples/logo.svg", circle.render());//use the class methods here!
     });
 }
 
+
+//Initializes our application
 init();
