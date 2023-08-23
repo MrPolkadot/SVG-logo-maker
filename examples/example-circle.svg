@@ -2,6 +2,6 @@
 
         <circle r="100" cx="150" cy="100" fill="red" />
 
-        <text font-size="72" font-weight="bold" x="85" y="125" fill="white">sjm</text>
+        <text font-size="72" font-weight="bold" x="85" y="125" fill="white">SVG</text>
         
         </svg>
