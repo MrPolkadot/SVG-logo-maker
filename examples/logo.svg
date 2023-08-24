@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+
+        <polygon fill="red" points="150,0 250,200 50,200" />
+
+        <text font-size="60" font-weight="bold" x="95" y="150" fill="white">SVG</text>
+
+        </svg>

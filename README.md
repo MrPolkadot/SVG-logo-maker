@@ -1,6 +1,8 @@
 # SVG Logo Maker
   
   ![Static Badge](https://img.shields.io/badge/license-MIT-blue)
+
+  ![example-logo.svg](./examples/example-circle.svg)
   
   ## Table of Contents
 - [SVG Logo Maker](#svg-logo-maker)
@@ -12,13 +14,13 @@
   - [Tests](#tests)
   - [License](#license)
   - [Contact-Me](#contact-me)
-  
-  ## Description
+
+## Description
   This application creates a svg file containing a logo. The logo is created by taking user input in the terminal. This was created by using **node.js**, **jest** and **Javascript**.
   ## Installation
   Must have node.js, inquirer, and jest installed on your computer.
   ## Usage
-  
+  Link to walkthrough video https://drive.google.com/file/d/1-VbxF7lvAU1QDU1HsYIQUBlne6J2554_/view
   ## Contributing
   Any contributions are welcome!
   ## Tests
